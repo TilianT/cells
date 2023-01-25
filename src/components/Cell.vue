@@ -2,7 +2,6 @@
   <div
     class="column"
     :class="[tmpClass, isFocus && 'hover']"
-    @click="$emit('updateCell', { row, column })"
   >
     <p>{{ data !== 0 ? data : '' }}</p>
   </div>

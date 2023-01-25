@@ -14,7 +14,7 @@
         :row="rowIndex"
         :column="colIndex"
         :isFocus="(rowFocus === rowIndex || colIndex == colFocus) ? true : false"
-        @updateCell="changeCell"
+        @click="changeCell(rowIndex, colIndex)"
         @mouseover="handleMouse(colIndex, rowIndex)"
       />
     </div>
@@ -34,7 +34,7 @@ export default {
     const colFocus = ref(0);
     const rowFocus = ref(0);
 
-    function changeCell({ row, column }) {
+    function changeCell(row, column) {
       for(let i = 0; i < gridSize; i++) {
         grid[row][i] += 1;
         const colVal = grid[i][column];
